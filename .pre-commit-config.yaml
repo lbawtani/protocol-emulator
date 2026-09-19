@@ -24,7 +24,7 @@ repos:
     hooks:
       - id: ocamlformat
         name: ocamlformat
-        entry: ocamlformat --check
+        entry: opam exec -- ocamlformat --check
         language: system
         files: \.(ml|mli)$
 
