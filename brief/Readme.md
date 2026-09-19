@@ -29,7 +29,7 @@ Build a small CPU with:
 * Precise cycle timing
 * Control-flow instructions
 
-![CPU-based protocol emulator](cpu-emulator.drawio.png)
+![CPU-based protocol emulator](CPU-emulator.drawio.png)
 
 The firmware then describes the protocol behaviour.
 
