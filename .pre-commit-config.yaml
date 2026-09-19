@@ -1,0 +1,38 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-json
+      - id: check-added-large-files
+      - id: check-merge-conflict
+      - id: detect-private-key
+      - id: mixed-line-ending
+
+  # Python lint + format
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.16.8
+    hooks:
+      - id: ruff-check
+        args: [--fix]
+      - id: ruff-format
+
+  # OCaml format/lint check (requires `opam install ocamlformat`)
+  - repo: local
+    hooks:
+      - id: ocamlformat
+        name: ocamlformat
+        entry: ocamlformat --check
+        language: system
+        files: \.(ml|mli)$
+
+  # SystemVerilog lint (requires `verible-verilog-lint` on PATH, e.g. `brew install verible`)
+  - repo: local
+    hooks:
+      - id: verible-verilog-lint
+        name: verible-verilog-lint
+        entry: verible-verilog-lint
+        language: system
+        files: \.(sv|svh|v)$
