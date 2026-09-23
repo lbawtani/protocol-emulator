@@ -1,6 +1,6 @@
 module async_fifo #(
     parameter int depth = 16,
-    parameter int width = 8
+    parameter int width = 1
 ) (
     input logic wr_clk,
     input logic wr_rst_n,
